@@ -1,0 +1,20 @@
+%Fatos
+
+mulher(shelley).
+homem(bill).
+mulher(mary).
+homem(jake).
+
+pai(bill, jake).
+pai(bill, shelley).
+mae(mary, jake).
+mae(mary, shelley).
+
+%/regras
+%
+%
+antepassado(mary, shelley) :- mae(mary, shelley).
+irmaos(X, Y) :- mae(M, X), mae(M, Y), pai(F, X), pai(F, Y).
+
+%consultas
+%
